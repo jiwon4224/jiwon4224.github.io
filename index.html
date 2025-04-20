@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- viewport 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>최지원의 포트폴리오</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- 메타데이터 -->
+    <meta name="author" content="최지원" />
+    <meta name="description" content="개발자 최지원의 포트폴리오 페이지입니다." />
+    <meta name="email" content="20231340@duksung.ac.kr" />
+
+  </head>
+  <body>
+    <!-- 헤더 영역 (이름, 프로필 사진, 네비게이션) -->
+    <header>
+      <h1>최지원의 포트폴리오</h1>
+      <!-- 프로필 이미지 -->
+      <img src="media/profile.png" alt="프로필 이미지" class="profile-img" />
+      <!-- 내비게이션 메뉴 -->
+      <nav>
+        <ul>
+          <!-- 앵커 링크로 각 섹션 연결 -->
+          <li><a href="#about">1. 소개</a></li>
+          <li><a href="#contact">2. 프로필</a></li>
+          <li><a href="#projects">3. 프로젝트</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 소개 섹션 -->
+      <section id="about">
+        <h2>1. ABOUT ME</h2>
+        <p>안녕하세요! 저는 프론트엔드에 관심이 많은 개발자 최지원입니다.</p>
+      </section>
+
+      <!-- 프로필 섹션 -->
+      <section id="contact">
+        <h2 class="section-title">2. PROFILE</h2>
+        <!-- 프로필 정보 그리드 -->
+        <div class="profile-grid">
+          <!-- 이름 -->
+          <div class="profile-item">
+            <span class="emoji">👤</span>
+            <div>
+              <strong>이름</strong><br/>
+              최지원
+            </div>
+          </div>
+          <!-- 생년월일 -->
+          <div class="profile-item">
+            <span class="emoji">📅</span>
+            <div>
+              <strong>생년월일</strong><br/>
+              02.12.12
+            </div>
+          </div>
+          <!-- 위치 -->
+          <div class="profile-item">
+            <span class="emoji">📍</span>
+            <div>
+              <strong>위치</strong><br/>
+              서울특별시 성북구
+            </div>
+          </div>
+          <!-- 연락처 -->
+          <div class="profile-item">
+            <span class="emoji">📞</span>
+            <div>
+              <strong>연락처</strong><br/>
+              010-1234-5678
+            </div>
+          </div>
+          <!-- 이메일 -->
+          <div class="profile-item">
+            <span class="emoji">✉️</span>
+            <div>
+              <strong>이메일</strong><br/>
+              20231340@duksung.ac.kr
+            </div>
+          </div>
+          <!-- 학력 -->
+          <div class="profile-item">
+            <span class="emoji">🎓</span>
+            <div>
+              <strong>학력</strong><br/>
+              덕성여자대학교<br/>(디지털소프트웨어공학부)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 프로젝트 섹션 -->
+      <section id="projects">
+        <h2>3. PROJECTS</h2>
+        <!-- 프로젝트 리스트 -->
+        <ol class="project-list">
+          <li>
+            <article class="project-card">
+              <h3>맛집 소개 프로젝트</h3>
+              <p>학교 주변 맛집 정보를 볼 수 있는 웹 페이지입니다.</p>
+              <p>
+                🔗 <a href="https://jiwon4224.github.io/duksung_diner/" target="_blank">웹사이트</a><br>
+                💻 <a href="https://github.com/jiwon4224/duksung_diner" target="_blank">GitHub</a>
+              </p>
+            </article>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <!-- 고정형 푸터 -->
+    <footer>
+      © 2025 최지원 | 20231340@duksung.ac.kr | 개발자 최지원의 포트폴리오 페이지입니다.
+    </footer>
+  </body>
+</html>

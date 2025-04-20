@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>웹폼입니다</title>
+  <style>
+    h3 {
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      margin: 10px;
+      padding: 10px;
+    }
+    #form1 {
+      background-color: rgb(243, 223, 237);
+      width: 300px;
+      margin: 10px;
+      padding: 10px;
+    }
+    #form2 {
+      background-color: rgb(197, 226, 251);
+      width: 300px;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+
+  <script>
+    // 폼1 제출 함수
+    function submitForm1(event) {
+      event.preventDefault();
+
+      const email = document.querySelector('#form1_email_id').value;
+      const name = document.querySelector('#form1_name_id').value;
+      const message = document.querySelector('#form1_message_id').value;
+
+      const meals = document.querySelectorAll('[name="form1_mealnow_name"]:checked');
+      const mealList = Array.from(meals).map(el => el.value).join(',');
+
+      const fav = document.querySelector('#form1_fav_id').value;
+      const callMeal = document.querySelector('[name="form1_meal"]:checked')?.value || '';
+
+      // 제출을 위한 fetch() 요청
+      fetch("https://script.google.com/macros/s/AKfycbzbVQUQ5y8U5NP0LFKN5FGIAOgdZbGBbU66bsoU9MdhTxkyy053pPh-IZVhbFnjbR83xA/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}&meal=${encodeURIComponent(mealList)}&fav=${encodeURIComponent(fav)}&call_meal=${encodeURIComponent(callMeal)}`
+      }).then(() => {
+        alert("정보가 성공적으로 전송되었습니다!");
+      }).catch(error => {
+        alert("전송 실패: " + error.message);
+      });
+    }
+
+    // 폼2 제출 함수
+    function submitForm2(event) {
+      event.preventDefault();
+
+      const email = document.querySelector('#form2_email_id').value;
+      const name = document.querySelector('#form2_name_id').value;
+      const message = document.querySelector('#form2_message_id').value;
+
+      const breads = document.querySelectorAll('[name="form2_breadnow_name"]:checked');
+      const breadList = Array.from(breads).map(el => el.value).join(',');
+
+      const fav = document.querySelector('#form2_favbread_id').value;
+      const callBread = document.querySelector('[name="form2_bread"]:checked')?.value || '';
+
+      // 제출을 위한 fetch() 요청
+      fetch("https://script.google.com/macros/s/AKfycby9OLYXlDX0EiZpLZUTET-v-_v7GLfT24lmGWlY_xWdh1TcWiV_p_QJQ0WC2mTZwCjiyA/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}&bread=${encodeURIComponent(breadList)}&fav=${encodeURIComponent(fav)}&call_bread=${encodeURIComponent(callBread)}`
+      }).then(() => {
+        alert("정보가 성공적으로 전송되었습니다!");
+      }).catch(error => {
+        alert("전송 실패: " + error.message);
+      });
+    }
+  </script>
+</head>
+
+<body>
+  <h3>과제1 WebForm</h3>
+  <div class="container">
+    <!-- 폼 1 -->
+    <div id="form1">
+      <form id="form1_id" onsubmit="submitForm1(event)">
+        <fieldset>
+          <legend>빵보다 밥인 당신</legend>
+          이메일:<br>
+          <input type="email" id="form1_email_id" placeholder="id@duksung.ac.kr" required><br>
+          이름:<br>
+          <input type="text" id="form1_name_id" placeholder="마이클" required><br><br>
+
+          지금 먹고싶은 음식은:<br>
+          <label><input type="checkbox" name="form1_mealnow_name" value="마라탕"> 마라탕</label><br>
+          <label><input type="checkbox" name="form1_mealnow_name" value="떡볶이"> 떡볶이</label><br>
+          <label><input type="checkbox" name="form1_mealnow_name" value="치킨"> 치킨</label><br><br>
+
+          최애 음식은:<br>
+          <input type="text" id="form1_fav_id" list="favmeal"><br>
+          <datalist id="favmeal">
+            <option value="순두부찌개">
+            <option value="샤브샤브">
+            <option value="치즈돈까스">
+          </datalist><br>
+
+          평생 밥만 먹을 수 있다:<br>
+          <label><input type="radio" name="form1_meal" value="네"> 네</label><br>
+          <label><input type="radio" name="form1_meal" value="아니요"> 아니요</label><br>
+          <label><input type="radio" name="form1_meal" value="네니요"> 네니요</label><br><br>
+
+          하고 싶은 말:<br>
+          <textarea rows="4" id="form1_message_id" required>없으면 말고~</textarea><br><br>
+
+          <button type="submit">제출</button>
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- 폼 2 -->
+    <div id="form2">
+      <form id="form2_id" onsubmit="submitForm2(event)">
+        <fieldset>
+          <legend>밥보다 빵인 당신</legend>
+          이메일:<br>
+          <input type="email" id="form2_email_id" placeholder="id@duksung.ac.kr" required><br>
+          이름:<br>
+          <input type="text" id="form2_name_id" placeholder="마이클" required><br><br>
+
+          지금 먹고 싶은 빵은:<br>
+          <label><input type="checkbox" name="form2_breadnow_name" value="치즈케이크"> 치즈 케이크</label><br>
+          <label><input type="checkbox" name="form2_breadnow_name" value="베이글"> 베이글</label><br>
+          <label><input type="checkbox" name="form2_breadnow_name" value="소금빵"> 소금빵</label><br><br>
+
+          최애 디저트는:<br>
+          <select id="form2_favbread_id">
+            <option value="케이크">케이크</option>
+            <option value="쿠키">쿠키</option>
+            <option value="아이스크림">아이스크림</option>
+          </select><br><br>
+
+          평생 빵만 먹을 수 있다:<br>
+          <label><input type="radio" name="form2_bread" value="네"> 네</label><br>
+          <label><input type="radio" name="form2_bread" value="아니요"> 아니요</label><br>
+          <label><input type="radio" name="form2_bread" value="네니요"> 네니요</label><br><br>
+
+          하고 싶은 말:<br>
+          <textarea rows="4" id="form2_message_id" required>없으면 말고~~</textarea><br><br>
+
+          <button type="submit">제출</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

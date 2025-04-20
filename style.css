@@ -1,0 +1,84 @@
+/* 전체 페이지 기본 스타일 설정 */
+body {
+  font-family: Arial, sans-serif; 
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  /* 중앙 정렬용 flex 설정 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+/* 헤더 영역 */
+header {
+  background-color: #cab193b8;
+  color: white;
+  padding: 1em;
+  width: 100%;
+}
+/* 네비게이션 메뉴 */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+/* 마우스 호버 색상 변경 */
+nav ul li a:hover {
+  color: #f8449bcb; /* 마우스를 올렸을 때 색상 */
+}
+/* 프로필 이미지 스타일 */
+.profile-img {
+  width: 150px;
+  border-radius: 50%;
+  margin-top: 1em;
+}
+/* 메인 콘텐츠 영역 */
+main {
+  width: 100%;
+  max-width: 800px;
+}
+/* 섹션 박스 공통 스타일 */
+section {
+  padding: 2em;
+  background-color: white;
+  margin: 1.5em auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+/* 프로젝트 리스트 영역 */
+.project-list {
+  list-style-position: inside;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+/* 프로필 2열 정렬 그리드 */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2열 */
+  gap: 1.5rem 2rem;
+  margin-top: 1em;
+  justify-content: center;
+}
+/* 푸터 고정 스타일 */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #cab193b8;
+  color: white;
+  text-align: center;
+  padding: 0.5em 0;
+  font-size: 0.9em;
+  z-index: 999;
+}
